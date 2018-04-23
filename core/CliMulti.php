@@ -273,7 +273,7 @@ class CliMulti
 
     public function isCommandAlreadyRunning($url)
     {
-        if (!$this->supportsAsync) {
+        if (!$this->supportsAsync || defined('PIWIK_TEST_MODE')) {
             // we cannot detect if web archive is still running
             return false;
         }
